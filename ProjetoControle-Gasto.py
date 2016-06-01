@@ -8,10 +8,10 @@ print("""                        *** MENU ***
                     [6] Procurar Funcionário
                     [7] Sair """)
 
-opcao=0
+opcao=7
 dados=[]
 
-while opcao!=7:
+while opcao>=7:
     
     opcao=int(input("Qual opção deseja?"))
     if opcao==1:
