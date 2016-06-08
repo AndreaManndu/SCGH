@@ -1,6 +1,15 @@
 
 import bibfuncao
 
+print("""                        *** MENU ***
+    *** Sistema de Controle de Gastos,hidráulicos ***
+                    [1] Criar serviço
+                    [2] Listar serviço
+                    [3] Cadastrar cliente
+                    [4] Procurar cliente
+                    [5] Cadastrar funcionário
+                    [6] Procurar Funcionário
+                    [7] Sair """)
 
 opcao=7
 lista_servico=[]
