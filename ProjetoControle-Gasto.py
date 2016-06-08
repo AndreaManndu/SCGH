@@ -1,4 +1,3 @@
-
 import bibfuncao
 
 print("""                        *** MENU ***
@@ -49,7 +48,7 @@ while opcao<=7:
                 print(i+1,":"+lista_servico[i])
         elif opcao==5:
             print(" *** CADASTRAR FUNCIONARIO ***")
-            lista_funcionario.append(input("Cdastro do funcionário:"))
+            lista_funcionario.append(input("Cadastro do funcionário:"))
         
             for i in range(len(lista_funcionario)):
                 print(i+1,":"+lista_funcionario[i])
