@@ -5,69 +5,62 @@ print("""                        *** MENU ***
     *** Sistema de Controle de Gastos,hidráulicos ***
                     [1] Criar serviço
                     [2] Listar serviço
-                    [3] Cadastrar cliente
-                    [4] Procurar cliente
-                    [5] Cadastrar funcionário
-                    [6] Procurar Funcionário
-                    [7] Sair """)
+                    [3] Procurar cliente
+                    [4] Procurar Funcionário
+                    [5] Sair """)
 
-opcao=7
-lista_servico=[]
-lista_funcionario=[]
+opcao=5
+
+servicos=[]
+clientes=[]
+funcionarios=[]
 
 
-
-bibfuncao.menu()
 entrada="S"
-while opcao<=7:
+while opcao<=5:
     while entrada =="S":
         
         opcao=int(input("Qual opção deseja?"))
         while opcao<0:
             opcao=int(input("Ops! opção inválida, digite novamente"))
-            
         if opcao==1:
             print(" *** CRIAR SERVIÇO ***")
-            lista_servico.append(input(" Informe o serviço:"))
-            
+            nomeServico=input("Informe o serviço: ")
+            #servicos.append(nomeServico)
+            Qtd_clientes=int(input("Quantidade de cliente: "))
+            for i in range (Qtd_clientes):
+                nome_cliente=input("Nome do cliente: ")
+                clientes.append(nome_cliente)
+            #servicos.append(clientes)
+                
+            Qtd_funcionario=int(input("Quantidade funcionario: "))
+            for i in range (Qtd_funcionario):
+                nome_funcionario=input("Nome funcionario: ")
+                salario = float(input("Informe o salário: "))
+                funcionarios.append([nome_funcionario, salario])
+            #servicos.append(funcionarios)
+            servicos.append([nomeServico, clientes, funcionarios])
+            print(servicos)
+        #FAZER        
         elif opcao==2:
-           print(" *** LISTAR TIPO DE SERVICO ***")
-           for i in range(len(lista_servico)):
-                    print(i+1,":"+lista_servico[i])
+            print(" *** LISTAR TIPO DE SERVICO ***")
+            for i in range(len(servicos)):
+                print(servicos[i][0])
+
+        #FAZER
         elif opcao==3:
-            print(" *** CADASTRAR CLIENTE ***")
-            lista_servico.append(input(" Informe o nome do Cliente:"))
-        
-            for i in range(len(lista_servico)):
-               print(i+1,":"+lista_servico[i])
-        
-        elif opcao==4:
+            
             print(" *** PROCURAR CLIENTE ***")
-            lista_servico.append(input(" Procurar  Cliente:"))
-        
-            for i in range(len(lista_servico)):
-                print(i+1,":"+lista_servico[i])
-        elif opcao==5:
-            print(" *** CADASTRAR FUNCIONARIO ***")
-            lista_funcionario.append(input("Cdastro do funcionário:"))
-        
-            for i in range(len(lista_funcionario)):
-                print(i+1,":"+lista_funcionario[i])
-            
-        elif opcao==6:
+        #FAZER
+        elif opcao==4:
             print(" *** PROCURAR FUNCIONARIO ***")
-            lista_funcionario.append(input(" Procurar funcionario:"))
-        
-            for i in range(lista_funcionario):
-                print(i+1,":"+lista_funcionario[i])
             
-        elif opcao==7:
+        elif opcao==5:
             print("Até a próxima!")
             entrada="N"
-   
         else:
             print("Opção inválida! Digite apenas entre os números de 1 á 7.")
-        if opcao!=7:
+        if opcao!=5:
             entrada=input("Continuar? [S/N]:")
 
     
