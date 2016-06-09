@@ -1,13 +1,5 @@
-
 import bibfuncao
 
-print("""                        *** MENU ***
-    *** Sistema de Controle de Gastos,hidráulicos ***
-                    [1] Criar serviço
-                    [2] Listar serviço
-                    [3] Procurar cliente
-                    [4] Procurar Funcionário
-                    [5] Sair """)
 
 opcao=5
 
@@ -15,7 +7,7 @@ servicos=[]
 clientes=[]
 funcionarios=[]
 
-
+bibfuncao.menu()
 entrada="S"
 while opcao<=5:
     while entrada =="S":
@@ -26,40 +18,36 @@ while opcao<=5:
         if opcao==1:
             print(" *** CRIAR SERVIÇO ***")
             nomeServico=input("Informe o serviço: ")
-            #servicos.append(nomeServico)
+         
             Qtd_clientes=int(input("Quantidade de cliente: "))
             for i in range (Qtd_clientes):
                 nome_cliente=input("Nome do cliente: ")
                 clientes.append(nome_cliente)
-            #servicos.append(clientes)
                 
             Qtd_funcionario=int(input("Quantidade funcionario: "))
             for i in range (Qtd_funcionario):
                 nome_funcionario=input("Nome funcionario: ")
                 salario = float(input("Informe o salário: "))
                 funcionarios.append([nome_funcionario, salario])
-            #servicos.append(funcionarios)
+            
             servicos.append([nomeServico, clientes, funcionarios])
             print(servicos)
-        #FAZER        
+             
         elif opcao==2:
-            print(" *** LISTAR TIPO DE SERVICO ***")
-            for i in range(len(servicos)):
-                print(servicos[i][0])
-
-        #FAZER
-        elif opcao==3:
+            bibfuncao.listar_servico(servicos)
             
-            print(" *** PROCURAR CLIENTE ***")
-        #FAZER
+        elif opcao==3:
+
+            bibfuncao.procurar_cliente(servicos)
+        
         elif opcao==4:
-            print(" *** PROCURAR FUNCIONARIO ***")
+            bibfuncao.procurar_funcionario(servicos)
             
         elif opcao==5:
             print("Até a próxima!")
             entrada="N"
         else:
-            print("Opção inválida! Digite apenas entre os números de 1 á 7.")
+            print("Opção inválida! Digite apenas entre os números de 1 á 5.")
         if opcao!=5:
             entrada=input("Continuar? [S/N]:")
 
