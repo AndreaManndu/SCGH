@@ -24,13 +24,22 @@ while opcao<=5:
             for i in range (Qtd_clientes):
                 nome_cliente=input("Nome do cliente: ")
                 clientes.append(nome_cliente)
-                
+            #DESPESAS COM FUNCIONARIO
+            
             Qtd_funcionario=int(input("Quantidade funcionario: "))
             for i in range (Qtd_funcionario):
-                nome_funcionario=input("Nome funcionario: ")
+                nome=input("Nome funcionario: ")
+                cargo=input("Cargo do funcionário:")
+                idade=int(input("Digite a idade do funcionário:"))
                 salario = float(input("Informe o salário: "))
-                despesa_func= Qtd_funcionario + salario
-                funcionarios.append([nome_funcionario, salario])              
+                cpf=int(input("Digite o CPF do funcionário:"))
+                transporte=float(input("Informe o valor gasto com  transporte:"))
+                alimentacao=float(input("Informe o valor gasto com alimentação:"))
+                despesa_func= Qtd_funcionario + salario + transporte + alimentacao
+                funcionarios.append([nome,cargo,salario,idade,cpf,transporte,alimentacao])
+                print("Total  gasto com funcionário foi",despesa_func)
+                
+            #DESPESAS COM MATERIAIS
 
             Qtd_material=int(input("Informe a quantidade de materiais, para este serviço:"))
             for i in range(Qtd_material):
@@ -38,12 +47,13 @@ while opcao<=5:
                 valor_material=float(input("Digite o valor do material:"))
                 calculo_materiais= Qtd_material * valor_material
                 materiais.append([tipo_material, valor_material])
-            
+                print("Total do valor gasto com os materias:",calculo_materiais)
+
+            #DESPESAS ADMINISTRATIVAS
+
             servicos.append([nomeServico, clientes, funcionarios,materiais])
             print(servicos)
-            print("Total gasto com funcionários:",despesa_func)
-            print("Total do valor gasto com os materias:",calculo_materiais)
-             
+                  
         elif opcao==2:
             bibfuncao.listar_servico(servicos)
             
