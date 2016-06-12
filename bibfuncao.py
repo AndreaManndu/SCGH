@@ -39,9 +39,7 @@ def procurar_funcionario(servicos):
         if servicos[i][2][i][0]==procura_funcionario:
             cont+=1
             print(cont,"-",servicos[i][2][i][0])# COMO TENHO UMA SUBLISTA DE FUNCIONARIO, USO O [I] PARA PEGAR CADA SUBLISTA*
-                    
 
-    
     
      
     
