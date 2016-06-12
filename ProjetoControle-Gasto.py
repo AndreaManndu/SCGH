@@ -29,6 +29,11 @@ while opcao<=5:
                 nome_funcionario=input("Nome funcionario: ")
                 salario = float(input("Informe o salário: "))
                 funcionarios.append([nome_funcionario, salario])
+                Qtd_material=int(input("Informe a quantidade de materiais, para este serviço:"))
+            for i in range(Qtd_material):
+                tipo_material=input("Informe o tipo de material:")
+                valor_material=float(input("Digite o valor do material:"))
+                materiais.append([tipo_material, valor_material])
             
             servicos.append([nomeServico, clientes, funcionarios])
             print(servicos)
