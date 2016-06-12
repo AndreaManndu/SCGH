@@ -6,6 +6,7 @@ opcao=5
 servicos=[]
 clientes=[]
 funcionarios=[]
+materiais=[]
 
 bibfuncao.menu()
 entrada="S"
@@ -28,10 +29,20 @@ while opcao<=5:
             for i in range (Qtd_funcionario):
                 nome_funcionario=input("Nome funcionario: ")
                 salario = float(input("Informe o salário: "))
-                funcionarios.append([nome_funcionario, salario])
+                despesa_func= Qtd_funcionario + salario
+                funcionarios.append([nome_funcionario, salario])              
+
+            Qtd_material=int(input("Informe a quantidade de materiais, para este serviço:"))
+            for i in range(Qtd_material):
+                tipo_material=input("Informe o tipo de material:")
+                valor_material=float(input("Digite o valor do material:"))
+                calculo_materiais= Qtd_material * valor_material
+                materiais.append([tipo_material, valor_material])
             
-            servicos.append([nomeServico, clientes, funcionarios])
+            servicos.append([nomeServico, clientes, funcionarios,materiais])
             print(servicos)
+            print("Total gasto com funcionários:",despesa_func)
+            print("Total do valor gasto com os materias:",calculo_materiais)
              
         elif opcao==2:
             bibfuncao.listar_servico(servicos)
