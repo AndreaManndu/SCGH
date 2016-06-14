@@ -7,6 +7,7 @@ servicos=[]
 clientes=[]
 funcionarios=[]
 materiais=[]
+despesas_administrativa=[]
 
 bibfuncao.menu()
 
@@ -59,27 +60,47 @@ while opcao<=5:
                 despesa_func= Qtd_funcionario + salario + transporte + alimentacao
                 
                 funcionarios.append([nome,cargo,salario,idade,cpf,transporte,alimentacao])
-                
                 print("Total  gasto com funcionário foi",despesa_func)
-                
-                #DESPESAS COM MATERIAIS
-
+    # Despesas com materiais do serviço
             Qtd_material=int(input("Informe a quantidade de materiais, para este serviço:"))
-            
             for i in range(Qtd_material):
-                
                 tipo_material=input("Informe o tipo de material:")
-                
                 valor_material=float(input("Digite o valor do material:"))
-                
                 calculo_materiais= Qtd_material * valor_material
-                
                 materiais.append([tipo_material, valor_material])
-                
                 print("Total do valor gasto com os materias:",calculo_materiais)
-
             servicos.append([nomeServico, clientes, funcionarios,materiais])
             print(servicos)
+            
+
+                
+    # Despesas  administrativas
+                
+            
+            Qtd_contador=int(input("Quantidade de contador:"))
+            for i in range(Qtd_contador):
+                contador=(input("Nome do contador da empresa:"))
+                salario=float(input("Digite o salário:"))
+                transporte=float(input("valor transporte:"))
+                alimentacao=float(input("Valor alimentação:"))
+                totalGasto= salario + transporte + alimentacao
+                despesas_administrativa.append([contador,salario,transporte,alimentacao])
+                print("Valor gasto com o contador é:", totalGasto)
+            
+                
+            Qtd_materiais=int(input("Digite a quantidade de materias administrativos:"))
+            for i in range (Qtd_materiais):
+                nome=input("Nome do item:")
+                valor=float(input("Valor do item:"))
+                total_material= Qtd_materiais + valor
+                despesas_administrativa.append([nome,valor])
+                print("Valor gasto com materias administrativos é:",total_material)
+            print(despesas_administrativa)
+
+            orcamento_servico= despesa_func + calculo_materiais + totalGasto +  total_material
+            print("Total gasto com todo o serviço:", orcamento_servico)
+            
+       # Chamando funções         
                   
         elif opcao==2:
             bibfuncao.listar_servico(servicos)

@@ -40,6 +40,3 @@ def procurar_funcionario(servicos):
             cont+=1
             print(cont,"-",servicos[i][2][i][0])# COMO TENHO UMA SUBLISTA DE FUNCIONARIO, USO O [I] PARA PEGAR CADA SUBLISTA*
 
-    
-     
-    
