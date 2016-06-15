@@ -12,7 +12,15 @@ def menu():
 
     
     
+def cliente (arquivo, nomeDoArquivo, cliente):
+   arquivo = open(nomeDoArquivo, "r")
 
+   texto = arquivo.readlines()
+   texto.append(cliente)
+   texto.append("\n")
+
+   arquivo = open(nomeDoArquivo, "w")
+   arquivo.writelines(texto)
 
 
 def listar_servico(servicos):

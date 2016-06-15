@@ -1,5 +1,7 @@
 import bibfuncao
 
+arquivoClientes = "arquivoClientes.txt"
+arquivo = open(arquivoClientes, "a")
 
 opcao=5
 
@@ -34,7 +36,7 @@ while opcao<=5:
             for i in range (Qtd_clientes):
                 
                 nome_cliente=input("Nome do cliente: ")
-                
+                bibfuncao.cliente(arquivo, arquivoClientes, nome_cliente)
                 clientes.append(nome_cliente)
                 
                 #DESPESAS COM FUNCIONARIOS
